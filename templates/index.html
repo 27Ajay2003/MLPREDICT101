@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Machine L API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div style="color:blue">
+        <form action="{{ url_for('predict')}}" method="POST">
+            <h2>Predictive analysis</h2>
+            <h3>R&D Spend</h3>
+            <input id="first" name="R&D_Spend" type="number ">
+            <h3>What is the Administration?</h3><br><input id="second" name="Administration" required="required">
+            <h3>How Many Marketing Spend	?</h3><input id="third" name="Marketing_Spend" required="required">
+            
+            <h3>What Is the city?</h3><br><select name="State" id="State" required="required">
+                <option value="NewYork">NewYork</option>
+                <option value="Florida">Florida</option>
+                <option value="California">California</option>
+            </select>
+            <br><br><button id="sub" type="submit ">Calculate the Profit</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+
+
